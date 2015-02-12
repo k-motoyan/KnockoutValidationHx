@@ -1,5 +1,6 @@
 -js bin/knockout-validation.js
--cp src
+-cp knockoutValidation
+-cp test
 -dce full
 -lib knockout.hx
 -main test.Compile
