@@ -4,7 +4,7 @@ import knockout.Observable;
 import js.html.Node;
 
 @:native("ko")
-extern class Knockout {
+extern class KnockoutValidation {
 
     public static var validation: Validation;
 

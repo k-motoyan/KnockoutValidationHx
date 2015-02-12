@@ -3,7 +3,7 @@ package test;
 import knockout.Observable;
 import knockout.Knockout;
 import knockoutValidation.Validation;
-import knockoutValidation.Knockout in KnockoutValidation;
+import knockoutValidation.KnockoutValidation;
 
 class Compile {
     static function main() {

@@ -4,10 +4,10 @@
   "license": "Public",
   "tags": ["js", "extern", "knockout", "knockout-validation"],
   "description": "Knockout validation extern",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "releasenote": "Initial release",
   "contributors": ["k-motoyan"],
   "dependencies": {
-    "knockout.hx": "~2.3.0"
+    "knockout.hx": "~3.2.0"
   }
 }
