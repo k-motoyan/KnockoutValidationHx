@@ -2,8 +2,9 @@ package test;
 
 import knockout.Observable;
 import knockout.Knockout;
-import knockoutValidation.Validation;
+import knockoutValidation.Error;
 import knockoutValidation.KnockoutValidation;
+import knockoutValidation.Validation;
 
 class Compile {
     static function main() {
@@ -13,6 +14,7 @@ class Compile {
         c.validateObservable();
         c.applyBindingsWithValidation();
         c.validateObservable();
+        c.group_error();
     }
 
     public function new() {
@@ -39,5 +41,12 @@ class Compile {
 
     public function validatedObservable() {
         var ret: Observable<String> = KnockoutValidation.validatedObservable("test");
+    }
+
+    public function group_error() {
+        var obs1 = Knockout.observable(1);
+        var obs2 = Knockout.observable(2);
+        var error: Error = Validation.group([obs1, obs2]);
+        var ret: Bool = error.isAnyMessageShown();
     }
 }

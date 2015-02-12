@@ -34,6 +34,8 @@ extern class Validation {
 
     public static var configuration: Configuration;
 
+    public static function group<T>(observable_group: Array<Observable<T>>, ?options: Dynamic): Error;
+
     public static function locale(name: String): String;
 
     public static function localize(msgTranslations: Array<String>): Void;
