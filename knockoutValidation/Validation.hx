@@ -17,30 +17,33 @@ typedef Configuration = {
     ?errorElementClass: String,
     ?errorMessageClass: String,
     ?allowHtmlMessages: Bool,
-    ?grouping: ConfigurationGrouping,
+    ?grouping: ConfigurationGroup,
     ?validate: Dynamic,
     ?html5Attributes: Array<String>,
     ?html5InputTypes: Array<String>
 }
 
-typedef ConfigurationGrouping = {
+typedef ConfigurationGroup = {
     ?deep: Bool,
     ?observable: Bool,
     ?live: Bool
 }
 
-@:native("kv")
 extern class Validation {
 
-    public static var configuration: Configuration;
+    public var configuration: Configuration;
 
-    @:overload(function<T>(observable: Observable<T>, ?options: ConfigurationGrouping): Error {})
-    public static function group(observable_group: Array<Observable<Dynamic>>): Error;
+    public var rules: Dynamic;
 
-    public static function locale(name: String): String;
+    public function defineLocale(name: String, values: String): Null<String>;
 
-    public static function localize(msgTranslations: Array<String>): Void;
+    @:overload(function<T>(observable: Observable<T>, ?options: ConfigurationGroup): Error {})
+    public function group(observable_group: Array<Observable<Dynamic>>): Error;
 
-    public static function validateObservable<T>(observable: Observable<T>): Bool;
+    public function locale(name: String): String;
+
+    public function localize(msgTranslations: Array<String>): Void;
+
+    public function validateObservable<T>(observable: Observable<T>): Bool;
 
 }
