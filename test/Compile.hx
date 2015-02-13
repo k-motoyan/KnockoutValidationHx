@@ -14,6 +14,7 @@ class Compile {
         c.validateObservable();
         c.applyBindingsWithValidation();
         c.validateObservable();
+        c.group_by_one();
         c.group_error();
     }
 
@@ -43,9 +44,15 @@ class Compile {
         var ret: Observable<String> = KnockoutValidation.validatedObservable("test");
     }
 
+    public function group_by_one() {
+        var obs = Knockout.observable(1);
+        var error: Error = Validation.group(obs, { deep: true });
+        error.showAllMessage(true);
+    }
+
     public function group_error() {
         var obs1 = Knockout.observable(1);
-        var obs2 = Knockout.observable(2);
+        var obs2 = Knockout.observable("a");
         var error: Error = Validation.group([obs1, obs2]);
         var ret: Bool = error.isAnyMessageShown();
     }

@@ -4,8 +4,8 @@
   "license": "Public",
   "tags": ["js", "extern", "knockout", "knockout-validation"],
   "description": "Knockout validation extern",
-  "version": "0.0.2",
-  "releasenote": "Add error class.",
+  "version": "0.0.3",
+  "releasenote": "Bug fix that fixed type of Validate.group argment.",
   "contributors": ["k-motoyan"],
   "dependencies": {
     "knockout.hx": ""
